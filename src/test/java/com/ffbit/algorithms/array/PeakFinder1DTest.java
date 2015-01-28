@@ -45,4 +45,9 @@ public class PeakFinder1DTest {
         assertThat(peakFinder.straightForwardFind(numbers), is(expectedPeak));
     }
 
+    @Test
+    public void itShouldPerformBinaryFind() {
+        assertThat(peakFinder.binaryFind(numbers), is(expectedPeak));
+    }
+
 }

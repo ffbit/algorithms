@@ -42,4 +42,27 @@ public class PeakFinder1D {
         return -1;
     }
 
+    public int binaryFind(int[] numbers) {
+        int low = 1;
+        int high = numbers.length - 1;
+
+        while (low <= high) {
+            int middle = low + (high - low) / 2;
+            int left = middle - 1;
+            int right = middle + 1;
+
+            if (numbers[middle] < numbers[left]) {
+                high = left;
+            } else if (middle == high) {
+                return numbers[middle];
+            } else if (numbers[middle] < numbers[right]) {
+                low = right;
+            } else {
+                return numbers[middle];
+            }
+        }
+
+        return -1;
+    }
+
 }
