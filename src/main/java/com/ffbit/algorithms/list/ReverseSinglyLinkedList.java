@@ -69,4 +69,20 @@ public class ReverseSinglyLinkedList {
         return reversedList;
     }
 
+    public <E> ListNode<E> reverseRecursively(ListNode<E> list) {
+        return reverseRecursively(list, null);
+    }
+
+    private <E> ListNode<E> reverseRecursively(ListNode<E> list,
+                                               ListNode<E> reversedList) {
+        if (list == null) {
+            return reversedList;
+        }
+
+        ListNode<E> tail = list.next;
+        list.next = reversedList;
+
+        return reverseRecursively(tail, list);
+    }
+
 }

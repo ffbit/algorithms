@@ -36,4 +36,30 @@ public class ReverseSinglyLinkedListTest {
         assertThat(listReverser.reverse(list), is(reversedList));
     }
 
+    @Test
+    public void itShouldReverseLinkedListOfOneNodeRecursively() {
+        ListNode<Integer> list = new ListNode<>(1);
+        ListNode<Integer> reversedList = new ListNode<>(1);
+
+        assertThat(listReverser.reverseRecursively(list), is(reversedList));
+    }
+
+    @Test
+    public void itShouldReverseLinkedListOfTwoNodesRecursively() {
+        ListNode<Integer> list = new ListNode<>(1, new ListNode<>(2));
+        ListNode<Integer> reversedList = new ListNode<>(2, new ListNode<>(1));
+
+        assertThat(listReverser.reverseRecursively(list), is(reversedList));
+    }
+
+    @Test
+    public void itShouldReverseLinkedListOfTreeNodesRecursively() {
+        ListNode<Integer> list =
+                new ListNode<>(1, new ListNode<>(2, new ListNode<>(3)));
+        ListNode<Integer> reversedList =
+                new ListNode<>(3, new ListNode<>(2, new ListNode<>(1)));
+
+        assertThat(listReverser.reverseRecursively(list), is(reversedList));
+    }
+
 }
