@@ -8,7 +8,7 @@ import static org.hamcrest.Matchers.is;
 import static org.junit.Assert.assertThat;
 
 public class UndirectedMatrixGraphTest {
-    private UndirectedMatrixGraph graph = new UndirectedMatrixGraph(4);
+    private UndirectedGraph graph = new UndirectedMatrixGraph(4);
 
     @Test
     public void itShouldHaveNumberOfVerticesSetOnCreation() {
