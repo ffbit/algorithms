@@ -29,8 +29,7 @@ public class UndirectedMatrixGraph implements UndirectedGraph {
 
     @Override
     public boolean isConnected(int v, int u) {
-        return v == u
-                || adjacencyMatrix[v][u] && adjacencyMatrix[u][v];
+        return v == u || adjacencyMatrix[v][u];
     }
 
     @Override
@@ -49,7 +48,7 @@ public class UndirectedMatrixGraph implements UndirectedGraph {
         Collection<Integer> connections = new ArrayList<>();
 
         for (int i = 0; i < vertices; i++) {
-            if (adjacencyMatrix[v][i] && v != i) {
+            if (adjacencyMatrix[v][i]) {
                 connections.add(i);
             }
         }
