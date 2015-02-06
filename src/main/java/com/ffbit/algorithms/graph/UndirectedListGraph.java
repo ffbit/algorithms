@@ -1,7 +1,7 @@
 package com.ffbit.algorithms.graph;
 
 import java.util.Collection;
-import java.util.HashSet;
+import java.util.LinkedHashSet;
 import java.util.Set;
 
 /**
@@ -19,7 +19,7 @@ public class UndirectedListGraph implements UndirectedGraph {
         adjacencyList = (Set<Integer>[]) new Set[vertices];
 
         for (int i = 0; i < vertices; i++) {
-            adjacencyList[i] = new HashSet<>();
+            adjacencyList[i] = new LinkedHashSet<>();
         }
     }
 
@@ -51,7 +51,7 @@ public class UndirectedListGraph implements UndirectedGraph {
 
     @Override
     public Collection<Integer> connections(int v) {
-        return new HashSet<>(adjacencyList[v]);
+        return new LinkedHashSet<>(adjacencyList[v]);
     }
 
     @Override
