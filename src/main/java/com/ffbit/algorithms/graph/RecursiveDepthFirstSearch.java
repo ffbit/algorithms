@@ -6,7 +6,7 @@ import java.util.List;
 /**
  * @see <a href="http://en.wikipedia.org/wiki/Depth-first_search">Depth-first search</a>
  */
-public class RecursiveDepthFirstSearch {
+public class RecursiveDepthFirstSearch implements DepthFirstSearch {
     private final UndirectedGraph graph;
     private final boolean[] visited;
     private final List<Integer> traversalPath = new ArrayList<>();
@@ -36,6 +36,7 @@ public class RecursiveDepthFirstSearch {
         }
     }
 
+    @Override
     public List<Integer> traversal() {
         return traversalPath;
     }
