@@ -1,11 +1,9 @@
 package com.ffbit.algorithms.graph;
 
-import static org.junit.Assert.*;
-
 public class UndirectedListGraphTest extends UndirectedGraphTest {
 
     @Override
-    protected UndirectedGraph createUndirectedGraph(int vertices) {
+    protected UndirectedGraph createGraph(int vertices) {
         return new UndirectedListGraph(vertices);
     }
 
